@@ -142,6 +142,7 @@
             c.consulta_id, 
             p.nombre AS nombre_paciente, 
             d.nombre AS nombre_medico, 
+            d.especialidad AS especialidad_medico,
             c.fecha, 
             c.descripcion 
           FROM consultas c
@@ -182,14 +183,14 @@
             ?>
         </select>
 
-        <label for="medico_id">Nombre del Medico:</label>
+        <label for="medico_id">Nombre del Medico (Especialidad):</label>
         <select id="medico_id" name="medico_id" required>
             <?php
-            $queryMedicos = "SELECT medico_id, nombre FROM medicos";
+            $queryMedicos = "SELECT medico_id, nombre, especialidad FROM medicos";
             $resultMedicos = mysqli_query($con, $queryMedicos);
             if (mysqli_num_rows($resultMedicos) > 0) {
                 while ($medico = mysqli_fetch_assoc($resultMedicos)) {
-                    echo "<option value='" . htmlspecialchars($medico['medico_id']) . "'>" . htmlspecialchars($medico['nombre']) . "</option>";
+                    echo "<option value='" . htmlspecialchars($medico['medico_id']) . "'>" . htmlspecialchars($medico['nombre']) . " (" . htmlspecialchars($medico['especialidad']) . ")</option>";
                 }
             } else {
                 echo "<option value=''>No hay medicos disponibles</option>";
