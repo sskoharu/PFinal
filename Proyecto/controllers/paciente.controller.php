@@ -22,6 +22,10 @@ switch ($_GET['op']) {
         $apellido = $data["apellido"];
         $direccion = $data["direccion"];
         $telefono = $data["telefono"];
+        if (empty($nombre) || empty($apellido)) {
+            echo json_encode(["success" => false, "message" => "Nombre y apellido son obligatorios"]);
+            break;
+        }
         $result = $paciente->insertar($nombre, $apellido, $direccion, $telefono);
         echo json_encode(["success" => $result == "ok"]);
         break;
@@ -32,6 +36,10 @@ switch ($_GET['op']) {
         $apellido = $data["apellido"];
         $direccion = $data["direccion"];
         $telefono = $data["telefono"];
+        if (empty($nombre) || empty($apellido)) {
+            echo json_encode(["success" => false, "message" => "Nombre y apellido son obligatorios"]);
+            break;
+        }
         $result = $paciente->actualizar($id, $nombre, $apellido, $direccion, $telefono);
         echo json_encode(["success" => $result == "ok"]);
         break;
