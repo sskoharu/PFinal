@@ -21,9 +21,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 },
                 body: JSON.stringify(data),
             })
-            .then(response => response.text())  // Cambiado a .text() para ver la respuesta completa
+            .then(response => response.text()) 
             .then(text => {
-                console.log("Respuesta del servidor:", text);  // Mostrar la respuesta completa en la consola
+                console.log("Respuesta del servidor:", text);  
                 try {
                     var responseData = JSON.parse(text);
                     if (responseData.success) {
@@ -51,9 +51,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 },
                 body: JSON.stringify({ id: id }),
             })
-            .then(response => response.text())  // Cambiado a .text() para ver la respuesta completa
+            .then(response => response.text())  
             .then(text => {
-                console.log("Respuesta del servidor:", text);  // Mostrar la respuesta completa en la consola
+                console.log("Respuesta del servidor:", text); 
                 try {
                     var responseData = JSON.parse(text);
                     if (responseData) {
@@ -86,9 +86,9 @@ document.addEventListener("DOMContentLoaded", function () {
                         "Content-Type": "application/json",
                     }
                 })
-                .then(response => response.text())  // Cambiado a .text() para ver la respuesta completa
+                .then(response => response.text())  
                 .then(text => {
-                    console.log("Respuesta del servidor:", text);  // Mostrar la respuesta completa en la consola
+                    console.log("Respuesta del servidor:", text); 
                     try {
                         var responseData = JSON.parse(text);
                         if (responseData.success) {

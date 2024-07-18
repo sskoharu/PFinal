@@ -32,7 +32,7 @@ class Clase_Consulta
         }
     }
 
-    // Nueva función para verificar si la fecha está ocupada
+    //función para verificar si la fecha está ocupada
     public function verificarFecha($fecha)
     {
         try {

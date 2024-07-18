@@ -3,7 +3,7 @@ require_once('../config/conexion.php');
 require_once('../models/consulta.model.php');
 $consulta = new Clase_Consulta();
 
-header('Content-Type: application/json');  // Asegúrate de que la respuesta sea JSON
+header('Content-Type: application/json'); 
 
 switch ($_GET['op']) {
     case "uno":

@@ -3,7 +3,7 @@ require_once('../config/conexion.php');
 require_once('../models/medico.model.php');
 $medico = new Clase_Medico();
 
-header('Content-Type: application/json');  // Asegúrate de que la respuesta sea JSON
+header('Content-Type: application/json');  
 
 $op = isset($_GET['op']) ? $_GET['op'] : '';
 
@@ -11,7 +11,7 @@ switch ($op) {
     case "uno":
         $data = json_decode(file_get_contents("php://input"));
         if (isset($data->id) && is_numeric($data->id)) {
-            $id = intval($data->id); // Asegurarse de que $id es un entero
+            $id = intval($data->id); 
             $datos = $medico->uno($id);
             $medicoData = mysqli_fetch_assoc($datos);
             if ($medicoData) {
